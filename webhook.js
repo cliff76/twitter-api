@@ -25,8 +25,9 @@ function getHandler(req, res) {
 
 function postHandler(req, res) {
   const body = req.body;
-  if(req.query.token && req.query.token === process.env.MY_TOKEN) {
-    res.status(200).json({authorized:true})
+  if(req.query.token) {
+    const isAuthorized = req.query.token === process.env.MY_TOKEN;
+    res.status(200).json({authorized:isAuthorized})
   } else {
     console.log(body);
     res.status(200).json(body);  
