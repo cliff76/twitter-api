@@ -25,8 +25,12 @@ function getHandler(req, res) {
 
 function postHandler(req, res) {
   const body = req.body;
-  console.log(body);
-  res.status(200).json(body);
+  if(req.query.token && req.query.token === process.env.MY_TOKEN) {
+    res.status(200).json({authorized:true})
+  } else {
+    console.log(body);
+    res.status(200).json(body);  
+  }
 }
 
 module.exports = (req, res) => {
