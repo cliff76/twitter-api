@@ -1,0 +1,14 @@
+{
+  "name": "twitter-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Clifton Craig <clifton.craig@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "now": "^19.1.2"
+  },
+  "scripts": {
+    "start": "now dev",
+    "build": "now --prod"
+  }
+}

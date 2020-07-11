@@ -1,0 +1,11 @@
+{
+    "name": "twitterapi",
+    "version": 2,
+    "builds": [{ "src": "webhook.js", "use": "@now/node" }],
+    "env": {
+      "TWITTER_CONSUMER_KEY": "@twitterapi-consumer-key",
+      "TWITTER_CONSUMER_SECRET": "@twitterapi-consumer-secret",
+      "TWITTER_ACCESS_TOKEN": "@twitterapi-access-token",
+      "TWITTER_ACCESS_TOKEN_SECRET": "@twitterapi-access-token-secret"
+    }
+  }
