@@ -27,7 +27,13 @@ function postHandler(req, res) {
   const body = req.body;
   if(req.query.token) {
     const isAuthorized = req.query.token === process.env.MY_TOKEN;
-    res.status(200).json({authorized:isAuthorized})
+    res.status(200).json({
+      authorized:isAuthorized,
+      consumer_key:process.env.TWITTER_CONSUMER_KEY,
+      consumer_secret:process.env.TWITTER_CONSUMER_SECRET,
+      access_token:process.env.TWITTER_ACCESS_TOKEN,
+      token_secret:process.env.TWITTER_ACCESS_TOKEN_SECRET
+    })
   } else {
     console.log(body);
     res.status(200).json(body);  
